@@ -25,4 +25,4 @@ app.get("/contact", function(req, res){
     res.render("pages/contact")
 })
 
-app.listen(3000)
+app.listen(8080)

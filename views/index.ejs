@@ -1,12 +1,54 @@
-<%- include('./components/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
 
 <body>
-    <h1>Index</h1>
+    <div class="container">
 
-    <div>
-        <h2><%= pokemon.name %></h2>
-        <h5><%= pokemon.id %></h5>
-        
+        <div class="header">
+            <div class="icon-container">
+                <canvas id="icon" width="100" height="100"></canvas>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="general-information">
+                <div class="status" data-status>Enter A Location</div>
+                <div class="location" data-location>To Find The Weather</div>
+            </div>
+
+            <div class="detail-section">
+                <div class="detail">
+                    <div class="title">Wind</div>
+                    <div class="value" data-wind>TBD</div>
+                </div>
+                <div class="detail bordered">
+                    <div class="title">Temperature</div>
+                    <div class="value" data-temperature>TBD</div>
+                </div>
+                <div class="detail">
+                    <div class="title">Precipitation</div>
+                    <div class="value" data-precipitation>TBD</div>
+                </div>
+            </div>
+            <div class="city-search-container">
+                <input type="text" data-city-search placeholder="Enter Location" class="city-search">
+            </div>
+        </div>
     </div>
+    <a href="https://darksky.net/poweredby" class="darksky-logo">Powered by Dark Sky</a>
+
+    <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLo4D1sO8dnwRTZ5ZtRN57KJoNIUWckek&libraries=places"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+    <script defer src="script.js"></script>
 </body>
+
 </html>

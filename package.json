@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "devStart": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,10 @@
     "express": "^4.17.1",
     "giphy-api": "^2.0.1",
     "moviedb": "^0.2.10",
+    "react-router": "^3.0.5"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.2"
   }
 }

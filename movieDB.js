@@ -11,7 +11,10 @@ movieDB.get("/", function(req, res){
     axios.get(`https://api.themoviedb.org/3/movie/${random_movie_id}?api_key=${API_KEY_MOVIE}&language=en-US&page=1`)
     .then(response => {
         console.log(response.data)
-        res.render("movieDB", { movie: response.data})
+        res.render("movieDB", { 
+            movie: response.data,
+            urlSrc: `https://image.tmdb.org/t/p/w500${response.data.poster_path}`
+        })
     })
 })
 

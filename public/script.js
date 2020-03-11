@@ -41,10 +41,24 @@ function setWeatherData(data, place) {
     windElement.textContent = data.windSpeed
     icon.set('icon', data.icon)
     icon.play()
+    // RECUPERER DATA ICONE
     mvdb.textContent = data.icon
 }
-
-
-
-// function setMovie(data, place) {
    
+
+// TO DO
+// If data.icon = clear-day -> code tMDb
+
+// CODE A REMPLACER
+
+// const latitude = ""
+// const longitude = ""
+// const promise = new Promise(function () {
+//     let place = searchBox.getPlaces()[0]
+//     resolve(place)
+// })
+// promise.then(function (data) {
+//     console.log(data)
+//     latitude = data.geometry.location.lat()
+//     longitude = data.geometry.location.lng()
+// })

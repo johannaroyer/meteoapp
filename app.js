@@ -8,6 +8,8 @@ const express = require("express")
 const app = express()
 const axios = require("axios")
 
+const movieDB = express()
+
 app.use(express.json())
 app.use(express.static('public'))
 app.set('view engine', 'ejs');
@@ -27,6 +29,18 @@ app.post('/weather', (req, res) => {
 })
 
 
-app.listen(1500, () => {
+movieDB.post((req,res) => {
+    let random_movie_id = Math.floor(Math.random() * 5200)
+    axios.get(`https://api.themoviedb.org/3/movie/${random_movie_id}?api_key=${API_KEY_MOVIE}&language=en-US&page=1`)
+    .then(response => {
+        console.log(response.data)
+        res.render("movieDB", { 
+            movie: response.data,
+            urlSrc: `https://image.tmdb.org/t/p/w500${response.data.poster_path}`
+        })
+    })
+})
+
+app.listen(3000, () => {
     console.log('Serveur lancé')
 })

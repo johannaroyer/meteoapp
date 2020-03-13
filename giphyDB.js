@@ -16,12 +16,12 @@ const API_KEY_GIF = "ykFLQoxrBAUkX7Vd6ZLUIT2yNmaH7ASw"
 giphyDB.set("view engine", "ejs")
 
 giphyDB.get("/", function(req, res){
-    axios.get(`http://api.giphy.com/v1/gifs/random?api_key=${API_KEY_GIF}&tag=sun&rating=g&limit=1`)
+    axios.get(`http://api.giphy.com/v1/gifs/random?api_key=${API_KEY_GIF}&tag=summer&rating=g&limit=1`)
     .then(response => {
         console.log(response)
         res.render("giphyDB.ejs", { 
             random: response.data, 
-            gifSrc: response.data.data.url
+            gifSrc: response.data.data.image_original_url,
         })
     })
 })

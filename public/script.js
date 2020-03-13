@@ -46,19 +46,19 @@ function setWeatherData(data, place) {
     // RECUPERER DATA ICONE
     mvdb.textContent = data.icon
 }
-   
 
 // TO DO
 // If data.icon = clear-day -> code tMDb
 
-const API_KEY_MOVIE = "a364334712f06f8df8dcfed82a17b1a1"
+const activite = "sleet"
 
-if (mvdb.textContent == "clear-day") {
-    console.log("voir un film")
-} else {
-    console.log("autre activité")
-
-    $.ajax({
+if (activite == "sleet") {
+    console.log("Movie")
+  } else if (activite == "cloudy"){
+    console.log("Cocktail")
+  } else if (activite == "snow"){
+      console.log("Movie")
+      $.ajax({
         method: "post",
         url : "/movie",
         data: "response.data",
@@ -66,4 +66,24 @@ if (mvdb.textContent == "clear-day") {
             console.log(data)
         }
     })
-}
+  } else if (activite == "clear-day"){
+      console.log("GIF")
+  } else if (activite == "clear-night"){
+      console.log("GIF")
+  } else if (activite == "wind"){
+      console.log("Movie")
+  } else if (activite == "partly-cloudy-day"){
+      console.log ("Cocktail")
+  } else if (activite == "fog"){
+      console.log ("Cocktail")
+  } else if (activite == "partly-cloudy-night"){
+      console.log("GIF")
+  } else if (activite == "rain"){
+      console.log("Movie")
+  }
+
+// if (mvdb.textContent == "clear-day") {
+//     console.log("voir un film")
+//   } else {
+//     console.log("autre activité")
+//   }

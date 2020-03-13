@@ -44,155 +44,155 @@ function setWeatherData(data, place) {
     icon.set('icon', data.icon)
     icon.play()
     // RECUPERER DATA ICONE
-    mvdb.textContent = data.icon
+    // mvdb.textContent = data.icon
+    // Proposer une activité en fonction de la météo
+    if (data.icon == "sleet") {
+        console.log("Movie")
+        $.ajax({
+            method: "post",
+            url : "/movie",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      } else if (data.icon == "cloudy"){
+        console.log("Movie")
+        $.ajax({
+            method: "post",
+            url : "/movie",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      } else if (data.icon == "snow"){
+          console.log("Movie")
+          $.ajax({
+            method: "post",
+            url : "/movie",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      } else if (data.icon == "clear-day"){
+          console.log("GIF")
+          $.ajax({
+            method: "post",
+            url : "/gifs",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      } else if (data.icon == "clear-night"){
+          console.log("GIF")
+          $.ajax({
+            method: "post",
+            url : "/gifs",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      } else if (data.icon == "wind"){
+          console.log("Movie")
+          $.ajax({
+            method: "post",
+            url : "/movie",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      } else if (data.icon == "partly-cloudy-day"){
+          console.log ("GIF")
+          $.ajax({
+            method: "post",
+            url : "/gifs",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      } else if (data.icon == "fog"){
+          console.log ("GIF")
+          $.ajax({
+            method: "post",
+            url : "/gifs",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      } else if (data.icon == "partly-cloudy-night"){
+          console.log("GIF")
+          $.ajax({
+            method: "post",
+            url : "/gifs",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      } else if (data.icon == "rain"){
+          console.log("Movie")
+          $.ajax({
+            method: "post",
+            url : "/movie",
+            data: "response.data",
+            success: function(res){
+                console.log("**********success************")
+                console.log(res)
+            },
+            error:function(){
+                console.log("**********************")
+            }
+        })
+      }
 }
 
 // TO DO
 // If data.icon = clear-day -> code tMDb
 
-const activite = "clear-night"
 
-if (activite == "sleet") {
-    console.log("Movie")
-    $.ajax({
-        method: "post",
-        url : "/movie",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  } else if (activite == "cloudy"){
-    console.log("Movie")
-    $.ajax({
-        method: "post",
-        url : "/movie",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  } else if (activite == "snow"){
-      console.log("Movie")
-      $.ajax({
-        method: "post",
-        url : "/movie",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  } else if (activite == "clear-day"){
-      console.log("GIF")
-      $.ajax({
-        method: "post",
-        url : "/gifs",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  } else if (activite == "clear-night"){
-      console.log("GIF")
-      $.ajax({
-        method: "post",
-        url : "/gifs",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  } else if (activite == "wind"){
-      console.log("Movie")
-      $.ajax({
-        method: "post",
-        url : "/movie",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  } else if (activite == "partly-cloudy-day"){
-      console.log ("GIF")
-      $.ajax({
-        method: "post",
-        url : "/gifs",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  } else if (activite == "fog"){
-      console.log ("GIF")
-      $.ajax({
-        method: "post",
-        url : "/gifs",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  } else if (activite == "partly-cloudy-night"){
-      console.log("GIF")
-      $.ajax({
-        method: "post",
-        url : "/gifs",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  } else if (activite == "rain"){
-      console.log("Movie")
-      $.ajax({
-        method: "post",
-        url : "/movie",
-        data: "response.data",
-        success: function(res){
-            console.log("**********success************")
-            console.log(res)
-        },
-        error:function(){
-            console.log("**********************")
-        }
-    })
-  }
 
 // if (mvdb.textContent == "clear-day") {
 //     console.log("voir un film")

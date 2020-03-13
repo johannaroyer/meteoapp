@@ -2,6 +2,8 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
 
+// CLES APIS
+
 const DARKSKY_API_KEY = "113872cb1772c3a491849da8d4bcb9c7"
 const API_KEY_MOVIE = "a364334712f06f8df8dcfed82a17b1a1"
 const API_KEY_GIF = "ykFLQoxrBAUkX7Vd6ZLUIT2yNmaH7ASw"
@@ -19,7 +21,7 @@ app.get('/', function(req, res){
     res.render('index')
 })
 
-
+// API DARKSKY
 app.post('/weather', (req, res) => {
     const url = `https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${req.body.latitude},${req.body.longitude}?units=auto`
     console.log(req.body)
@@ -29,7 +31,7 @@ app.post('/weather', (req, res) => {
     }).then(data => res.json(data.data.currently))
 })
 
-//API MOVIE
+//API MOVIEDB
 app.post('/movie', (req, res) => {
     let random_movie_id = Math.floor(Math.random() * 400)
     console.log(`https://api.themoviedb.org/3/movie/${random_movie_id}?api_key=${API_KEY_MOVIE}&language=en-US&page=1`)
@@ -43,7 +45,7 @@ app.post('/movie', (req, res) => {
     })
 })
 
-//API GIF
+//API GIPHYDB
 app.post('/gifs', (req, res) => {
     console.log(`http://api.giphy.com/v1/gifs/random?api_key=${API_KEY_GIF}&tag=weather&rating=g&limit=1`)
     axios.get(`http://api.giphy.com/v1/gifs/random?api_key=${API_KEY_GIF}&tag=weather&rating=g&limit=1`)

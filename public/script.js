@@ -1,3 +1,5 @@
+// API GOOGLE MAPS + DARK SKY
+
 const searchElement = document.querySelector('[data-city-search]')
 const searchBox = new google.maps.places.SearchBox(searchElement)
 
@@ -24,6 +26,8 @@ searchBox.addListener('places_changed', function () {
     })
 })
 
+// AFFICHER LES DONNEES METEOROLOGIQUES
+
 const icon = new Skycons({ color: '#293349' })
 const locationElement = document.querySelector('[data-location]')
 const statusElement = document.querySelector('[data-status]')
@@ -33,7 +37,7 @@ const windElement = document.querySelector('[data-wind]')
 icon.set('icon', 'clear-day')
 icon.play()
 
-const mvdb = document.querySelector('[mvdbtest]')
+// const mvdb = document.querySelector('[mvdbtest]')
 
 function setWeatherData(data, place) {
     locationElement.textContent = place
@@ -45,7 +49,7 @@ function setWeatherData(data, place) {
     icon.play()
     // RECUPERER DATA ICONE
     // mvdb.textContent = data.icon
-    // Proposer une activité en fonction de la météo
+    // PROPOSER UN FILM OU UN GIF EN FONCTION DE LA METEO
     if (data.icon == "sleet") {
         console.log("Movie")
         $.ajax({

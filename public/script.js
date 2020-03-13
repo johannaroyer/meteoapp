@@ -1,33 +1,6 @@
 const searchElement = document.querySelector('[data-city-search]')
 const searchBox = new google.maps.places.SearchBox(searchElement)
 
-// const latitude = ""
-// const longitude = ""
-// const promise = new Promise(function () {
-//     let place = searchBox.getPlaces()[0]
-//     resolve(place)
-// })
-
-// promise.then(function (data) {
-//     console.log(data)
-//     latitude = data.geometry.location.lat()
-//     longitude = data.geometry.location.lng()
-//     fetch('/weather', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             latitude: latitude,
-//             longitude: longitude
-//         })
-//     }).then(res => res.json()).then(data => {
-//         console.log(data)
-//         setWeatherData(data, place.formatted_address)
-//     })
-// })
-
 searchBox.addListener('places_changed', function () {
     const place = searchBox.getPlaces()[0]
     if (place == null) return
@@ -76,23 +49,34 @@ function setWeatherData(data, place) {
 // TO DO
 // If data.icon = clear-day -> code tMDb
 
-if (mvdb.textContent == "clear-day") {
-    console.log("voir un film")
-  } else {
-    console.log("autre activité")
+const activite = "sleet"
+
+if (activite == "sleet") {
+    console.log("Movie")
+
+
+  } else if (activite == "cloudy"){
+    console.log("Cocktail")
+  } else if (activite == "snow"){
+      console.log("Movie")
+  } else if (activite == "clear-day"){
+      console.log("GIF")
+  } else if (activite == "clear-night"){
+      console.log("GIF")
+  } else if (activite == "wind"){
+      console.log("Movie")
+  } else if (activite == "partly-cloudy-day"){
+      console.log ("Cocktail")
+  } else if (activite == "fog"){
+      console.log ("Cocktail")
+  } else if (activite == "partly-cloudy-night"){
+      console.log("GIF")
+  } else if (activite == "rain"){
+      console.log("Movie")
   }
-  
 
-// CODE A REMPLACER
-
-// const latitude = ""
-// const longitude = ""
-// const promise = new Promise(function () {
-//     let place = searchBox.getPlaces()[0]
-//     resolve(place)
-// })
-// promise.then(function (data) {
-//     console.log(data)
-//     latitude = data.geometry.location.lat()
-//     longitude = data.geometry.location.lng()
-// })
+// if (mvdb.textContent == "clear-day") {
+//     console.log("voir un film")
+//   } else {
+//     console.log("autre activité")
+//   }

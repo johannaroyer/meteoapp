@@ -50,7 +50,7 @@ function setWeatherData(data, place) {
 // TO DO
 // If data.icon = clear-day -> code tMDb
 
-const activite = "sleet"
+const activite = "snow"
 
 if (activite == "sleet") {
     console.log("Movie")
@@ -63,7 +63,11 @@ if (activite == "sleet") {
         url : "/movie",
         data: "response.data",
         success: function(res){
-            console.log(data)
+            console.log("**********success************")
+            console.log(res)
+        },
+        error:function(){
+            console.log("**********************")
         }
     })
   } else if (activite == "clear-day"){
